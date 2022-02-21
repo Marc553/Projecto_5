@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    public int points;
+    public ParticleSystem esxprosionParticle;
+
     private float lifeTime = 2f;
+
     private GameManager gameManagerScript;
 
     void Start()
@@ -14,13 +18,20 @@ public class Target : MonoBehaviour
         gameManagerScript = FindObjectOfType<GameManager>();
     }
 
-    private void OnMouseSDown()
+    private void OnMouseDown()
     {
-        Destroy(gameObject);
-
-        if(gameObject.CompareTag("Bad"))
+        if (!gameManagerScript.isGameOver)
         {
-            gameManagerScript.isGameOver = true;
+            gameManagerScript.UpdateScore(points);
+            Instantiate(esxprosionParticle, transform.position, esxprosionParticle.transform.rotation);
+
+            Destroy(gameObject);
+
+            if (gameObject.CompareTag("Bad"))
+            {
+                gameManagerScript.GameOver();
+
+            }
         }
     }
 

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+
 
 public class GameManager : MonoBehaviour
 {
-
+    
     public GameObject[] targetPrefabs;
     public bool isGameOver;
     public List<Vector3> targetPositions;
@@ -13,12 +15,20 @@ public class GameManager : MonoBehaviour
     private float minY = -3.75f;
     private float distanceBetweenSquares = 2.5f;
 
+    public TextMeshProUGUI pointsText;
+    public GameObject gameOverPanel;
+
+
     private float spawnRate = 2f;
     private Vector3 randomPos;
 
+    private int score = 0;
 
     void Start()
     {
+        pointsText.text = $"Score: {score}";
+        gameOverPanel.SetActive(false);
+
         StartCoroutine(SpawnRandomTarget());
     }
 
@@ -31,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         int SaltoX = Random.Range(0, 4);
         int SaltoY = Random.Range(0, 4);
+
         float spawnPosX = minX + SaltoX * distanceBetweenSquares;
         float spawnPosY = minY + SaltoY * distanceBetweenSquares;
 
@@ -56,5 +67,16 @@ public class GameManager : MonoBehaviour
          
     }
 
+    public void UpdateScore(int pointsToAdd)
+    {
+        score += pointsToAdd;
+        pointsText.text = $"Score: {score}";
+    }
+
+    public void GameOver()
+    {
+        isGameOver = true;
+        gameOverPanel.SetActive(true);
+    }
 
 }

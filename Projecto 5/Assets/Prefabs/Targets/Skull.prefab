@@ -108,3 +108,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6927e534e8324a4d824f48b34c3b886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: -35
+  esxprosionParticle: {fileID: 2852413659578719189, guid: ad604245d81df4d9faffb305340f5797, type: 3}
