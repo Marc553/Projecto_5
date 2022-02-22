@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverPanel;
 
 
-    private float spawnRate = 2f;
+    private float spawnRate = 1f;
     private Vector3 randomPos;
 
     private int score = 0;
@@ -77,6 +78,17 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = true;
         gameOverPanel.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+
+    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene(0);
+
     }
 
 }
