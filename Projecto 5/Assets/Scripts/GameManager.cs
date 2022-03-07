@@ -18,19 +18,17 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI pointsText;
     public GameObject gameOverPanel;
+    public GameObject mainMenuPanel;    
 
-
-    private float spawnRate = 1f;
+    public float spawnRate = 2f;
     private Vector3 randomPos;
 
     private int score = 0;
 
     void Start()
     {
-        pointsText.text = $"Score: {score}";
-        gameOverPanel.SetActive(false);
-
-        StartCoroutine(SpawnRandomTarget());
+        mainMenuPanel.SetActive(true);
+      
     }
 
     void Update()
@@ -82,13 +80,24 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(1);
-
-    }
-    public void StartGame()
-    {
         SceneManager.LoadScene(0);
 
     }
 
+    public void StartGame(int difficulty)
+    {
+        mainMenuPanel.SetActive(false);
+
+        isGameOver = false;
+        gameOverPanel.SetActive(false);
+
+        score = 0;
+        UpdateScore(0);
+
+        spawnRate = 2f;
+        spawnRate /= difficulty;
+
+        StartCoroutine(SpawnRandomTarget());
+
+    }
 }

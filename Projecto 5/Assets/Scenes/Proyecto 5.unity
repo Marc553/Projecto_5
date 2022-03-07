@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: d6e1d6ccb9e68cb438e6832d5789a67d, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 43ccdc79182374855b6548874ed9e158, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -419,6 +419,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &618699433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5879304534091514587, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
+  m_PrefabInstance: {fileID: 809331019}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &809331019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -426,17 +431,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1536631559}
     m_Modifications:
-    - target: {fileID: 5879304533305020084, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 374245334}
-    - target: {fileID: 5879304533305020084, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+    - target: {fileID: 44213777, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
+      propertyPath: difuculty
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 5879304533305020084, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+    - target: {fileID: 44213777, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
+      propertyPath: diffuculty
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 809331021, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
+      propertyPath: difuculty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 809331021, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
+      propertyPath: diffuculty
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 838426760, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
+      propertyPath: difuculty
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 838426760, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
+      propertyPath: diffuculty
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5879304534091514580, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
       propertyPath: m_Pivot.x
@@ -522,21 +539,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5879304534091514581, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.47058824
-      objectReference: {fileID: 0}
-    - target: {fileID: 5879304534091514581, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.23363651
-      objectReference: {fileID: 0}
-    - target: {fileID: 5879304534091514581, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5879304534091514587, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
       propertyPath: m_Name
-      value: Start Panel
+      value: Menu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2324c09b70c9d94787203f5dd5c579a, type: 3}
@@ -1554,6 +1559,14 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 122407494}
+    - target: {fileID: 2318022082289569865, guid: 4fb3cdf7437b7dd4b84b26b38199e7b0, type: 3}
+      propertyPath: mainMenuPanel
+      value: 
+      objectReference: {fileID: 618699433}
+    - target: {fileID: 2318022082289569865, guid: 4fb3cdf7437b7dd4b84b26b38199e7b0, type: 3}
+      propertyPath: mainMenuPower
+      value: 
+      objectReference: {fileID: 618699433}
     - target: {fileID: 2318022082289569866, guid: 4fb3cdf7437b7dd4b84b26b38199e7b0, type: 3}
       propertyPath: m_Name
       value: GameManager
